@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import entities.Match;
 import entities.Team;
+import services.MyComparator;
 
 public class Program {
 
@@ -18,9 +19,10 @@ public class Program {
 		List<Team> teams = new ArrayList<>();
 		List<Match> matches = new ArrayList<>();
 
-		System.out.print("Quantos times vão participar: ");
+		System.out.print("Quantos times participarão? ");
 		int numberOfTeams = sc.nextInt();
 
+		System.out.println();
 		System.out.println("Informe o nome dos times:");
 
 		sc.nextLine();
@@ -28,14 +30,15 @@ public class Program {
 		for (int i = 0; i < numberOfTeams; i++) {
 			System.out.print("Time #" + (i + 1) + ": ");
 			String teamName = sc.nextLine();
-
 			teams.add(new Team(teamName));
 		}
 
+		System.out.println();
 		System.out.print("Quantas partidas serão disputadas? ");
 		int numberOfMatches = sc.nextInt();
 		sc.nextLine();
 
+		System.out.println();
 		for (int i = 0; i < numberOfMatches; i++) {
 			System.out.println("Partida #" + (i + 1));
 
@@ -70,15 +73,24 @@ public class Program {
 			int awayGoals = sc.nextInt();
 
 			sc.nextLine();
-			
+
 			Match match = new Match(homeTeam, awayTeam, homeGoals, awayGoals);
 
 			match.processResult();
-			
+
 			matches.add(match);
 			
+			System.out.println();
 		}
+		
 
+		teams.sort(new MyComparator());
+		
+		for (Team t : teams) {
+			System.out.println(t);
+			System.out.println();
+		}
+		
 		sc.close();
 	}
 }

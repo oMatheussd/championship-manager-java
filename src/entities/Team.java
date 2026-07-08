@@ -72,10 +72,30 @@ public class Team {
 	public void addGoalsConceded(int goals) {
 		goalsConceded += goals;
 	}
+	
+	public int goalDifference() {
+		return goalsScored - goalsConceded;
+	}
 
 	@Override
 	public String toString() {
-		return "Team = " + teamName;
+		return teamName 
+				+ "\n"
+				+ "Pontos: " + points 
+				+ "\n"
+				+ "Jogos: " + matches 
+				+ "\n"
+				+ "Vitorias: " + victories
+				+ "\n"
+				+ "Empates: " + draws
+				+ "\n"
+				+ "Derrotas: " + defeats
+				+ "\n"
+				+ "GP: " + goalsScored
+				+ "\n"
+				+ "GC: " + goalsConceded
+				+ "\n"
+				+ "SG: " + goalDifference(); 
 	}
-	
+
 }

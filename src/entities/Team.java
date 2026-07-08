@@ -73,7 +73,7 @@ public class Team {
 		goalsConceded += goals;
 	}
 	
-	public int goalDifference() {
+	public int getGoalDifference() {
 		return goalsScored - goalsConceded;
 	}
 
@@ -81,21 +81,21 @@ public class Team {
 	public String toString() {
 		return teamName 
 				+ "\n"
-				+ "Pontos: " + points 
+				+ "Pontos: " + getPoints() 
 				+ "\n"
-				+ "Jogos: " + matches 
+				+ "Jogos: " + getMatches() 
 				+ "\n"
-				+ "Vitorias: " + victories
+				+ "Vitorias: " + getVictories()
 				+ "\n"
-				+ "Empates: " + draws
+				+ "Empates: " + getDraws()
 				+ "\n"
-				+ "Derrotas: " + defeats
+				+ "Derrotas: " + getDefeats()
 				+ "\n"
-				+ "GP: " + goalsScored
+				+ "GP: " + getGoalsScored()
 				+ "\n"
-				+ "GC: " + goalsConceded
+				+ "GC: " + getGoalsConceded()
 				+ "\n"
-				+ "SG: " + goalDifference(); 
+				+ "SG: " + getGoalDifference(); 
 	}
 
 }

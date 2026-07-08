@@ -13,7 +13,7 @@ public class MyComparator implements Comparator<Team> {
 			return comp;
 		}
 
-		comp = Integer.compare(t2.goalDifference(), t1.goalDifference());
+		comp = Integer.compare(t2.getGoalDifference(), t1.getGoalDifference());
 
 		if (comp != 0) {
 			return comp;

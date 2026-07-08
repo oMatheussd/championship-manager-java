@@ -46,26 +46,12 @@ public class Program {
 
 			String homeTeamName = sc.nextLine();
 
-			Team homeTeam = null;
-
-			for (Team t : teams) {
-				if (homeTeamName.equals(t.getTeamName())) {
-					homeTeam = t;
-					break;
-				}
-			}
+			Team homeTeam = findTeam(teams, homeTeamName);
 
 			System.out.print("Time visitante: ");
 			String awayTeamName = sc.nextLine();
 
-			Team awayTeam = null;
-
-			for (Team t : teams) {
-				if (awayTeamName.equals(t.getTeamName())) {
-					awayTeam = t;
-					break;
-				}
-			}
+			Team awayTeam = findTeam(teams, awayTeamName);
 
 			System.out.print("Gols do mandante: ");
 			int homeGoals = sc.nextInt();
@@ -79,21 +65,30 @@ public class Program {
 			match.processResult();
 
 			matches.add(match);
-			
+
 			System.out.println();
 		}
-		
 
 		teams.sort(new MyComparator());
-		
+
 		System.out.println("CLASSIFICAÇÃO");
 		System.out.println();
-		
+
 		for (Team t : teams) {
 			System.out.println(t);
 			System.out.println();
 		}
-		
+
 		sc.close();
+	}
+
+	public static Team findTeam(List<Team> teams, String teamName) {
+
+		for (Team t : teams) {
+			if (teamName.equals(t.getTeamName())) {
+				return t;
+			}
+		}
+		return null;
 	}
 }

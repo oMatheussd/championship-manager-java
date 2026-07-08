@@ -70,7 +70,20 @@ public class Program {
 		}
 
 		teams.sort(new MyComparator());
-
+		Team champion = teams.get(0);
+		
+				
+		System.out.println("CAMPEÃO: " + champion.getTeamName());
+		
+		System.out.println();
+		System.out.println("RESULTADO DAS PARTIDAS");
+		System.out.println();
+		
+		for (Match m : matches) {
+			System.out.println(m);
+		}
+		
+		System.out.println();
 		System.out.println("CLASSIFICAÇÃO");
 		System.out.println();
 

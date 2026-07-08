@@ -52,4 +52,11 @@ public class Match {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return getHomeTeam().getTeamName() + " " + getHomeGoals() + " x " + getAwayGoals() + " " + getAwayTeam().getTeamName();
+	}
+	
+	
+
 }

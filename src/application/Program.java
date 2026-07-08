@@ -86,6 +86,9 @@ public class Program {
 
 		teams.sort(new MyComparator());
 		
+		System.out.println("CLASSIFICAÇÃO");
+		System.out.println();
+		
 		for (Team t : teams) {
 			System.out.println(t);
 			System.out.println();
